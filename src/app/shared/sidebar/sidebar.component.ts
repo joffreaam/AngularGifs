@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 import { Gif } from '../../gifs/interface/gifs.interface';
@@ -21,6 +22,10 @@ export class SidebarComponent {
     this.gifsService.buscarGifs(gif);
   }
 
+  deleteGame(gif: string ){
+    this.gifsService.eliminarItemHistorial(gif);
+
+  }
 
 }
 

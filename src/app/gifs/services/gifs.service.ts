@@ -9,7 +9,7 @@ export class GifsService {
 
   private servicioURL:   string = 'http://api.giphy.com/v1/gifs'
   private apiKey:        string = 'I0dBk0X5J7alZxalsZWaGUnHFbmVqiz6';
-  private _historial:     string[] = [];
+  private _historial:    string[] = [];
 
   public resultados: Gif[] = [];
 
@@ -60,6 +60,12 @@ export class GifsService {
     //console.log(data);
 
 
+  }
+
+  eliminarItemHistorial( item: string){
+    var index = this._historial.indexOf(item);
+    this._historial.splice(index, 1);
+  
   }
 
 }

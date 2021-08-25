@@ -1,17 +1,28 @@
 <!-- sidebar -->
 <div class="bg-dark border-rigth p-3" id="sidebar">
-    <h3 class="text-light">
+    <h3 class="text-secondary">
         Gifs-App
     </h3>
-    <hr class="text-light">
-    <div class="list-group list-reset" >
-      <a  
-        *ngFor="let gif of historial" 
-        (click)="buscarGifts(gif)"
-        href="#" 
-        class="list-group-item list-group-item-action">
-        {{ gif | titlecase }}
-      </a>
+    <hr class="text-secondary">
+    <div class="container">
+      <div class="row list-group list-reset" >
+      
+          <div  class="col " *ngFor="let gif of historial">
+            <a id="itemGif"
+              (click)="buscarGifts(gif)"
+              href="#"
+              class="badge badge-light "
+              >
+              {{ gif | titlecase }}
+            </a>
+            
+            <button class="btn btn-dark" (click)="deleteGame(gif)">
+                <i class="fa fa-trash-alt"></i>
+            </button>
+
+
+          </div>
+      </div>
     </div>
   </div>
 <!-- end sidebar -->
